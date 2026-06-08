@@ -1,415 +1,587 @@
-/* ==========================
-   GLOBAL
-========================== */
+/* =========================
+   GOOGLE FONT
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   RESET
+========================= */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+
+--gold:#D4AF37;
+--black:#0B0B0B;
+--dark:#121212;
+--card:#1E1E1E;
+--white:#FFFFFF;
+--gray:#BDBDBD;
+
 }
+
+.light{
+
+--black:#F5F5F5;
+--dark:#FFFFFF;
+--card:#EEEEEE;
+--white:#111111;
+--gray:#444444;
+
+}
+
+/* =========================
+   BODY
+========================= */
 
 body{
-    background:linear-gradient(
-    135deg,
-    #07142b,
-    #102347
-    );
 
-    color:white;
-    min-height:100vh;
-    transition:0.4s;
+background:var(--black);
+color:var(--white);
+
+transition:0.4s ease;
+
 }
 
-/* ==========================
-   LIGHT MODE
-========================== */
-
-body.light{
-    background:#f4f7fb;
-    color:#222;
-}
-
-/* ==========================
+/* =========================
    NAVBAR
-========================== */
+========================= */
 
 .navbar{
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-    padding:18px 7%;
+padding:20px 8%;
 
-    background:rgba(255,255,255,0.05);
+background:rgba(0,0,0,0.85);
 
-    backdrop-filter:blur(10px);
+backdrop-filter:blur(10px);
 
-    position:sticky;
-    top:0;
-    z-index:1000;
+position:sticky;
+top:0;
+z-index:1000;
 
-    border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 .logo{
-    color:#38bdf8;
-    font-size:28px;
-    font-weight:700;
+
+font-size:30px;
+font-weight:700;
+
+color:var(--gold);
+
 }
 
 .nav-links{
-    display:flex;
-    list-style:none;
-    gap:25px;
+
+display:flex;
+gap:30px;
+
+list-style:none;
+
 }
 
 .nav-links a{
 
-    text-decoration:none;
-    color:white;
-    font-weight:500;
-    transition:0.3s;
+color:var(--white);
+
+text-decoration:none;
+
+font-weight:500;
+
+transition:0.3s;
+
 }
 
 .nav-links a:hover{
-    color:#38bdf8;
-}
 
-body.light .nav-links a{
-    color:#222;
+color:var(--gold);
+
 }
 
 #themeBtn{
 
-    background:#38bdf8;
-    border:none;
-    color:white;
+background:var(--gold);
 
-    padding:10px 14px;
+border:none;
 
-    border-radius:8px;
-    cursor:pointer;
+padding:10px 15px;
+
+border-radius:8px;
+
+cursor:pointer;
+
 }
 
-/* ==========================
-   GLASS SECTION
-========================== */
-
-.glass-section{
-
-    width:92%;
-
-    margin:30px auto;
-
-    padding:25px;
-
-    background:rgba(255,255,255,0.08);
-
-    backdrop-filter:blur(10px);
-
-    border-radius:15px;
-
-    border:1px solid rgba(255,255,255,0.1);
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,0.3);
-}
-
-body.light .glass-section{
-
-    background:white;
-}
-
-/* ==========================
+/* =========================
    HERO
-========================== */
+========================= */
 
-.hero-card{
+.hero{
 
-    display:flex;
-    align-items:center;
-    gap:30px;
+height:85vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,0.65),
+rgba(0,0,0,0.65)
+),
+url("images/hero.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+
 }
 
-.hero-card img{
+.hero-content h1{
 
-    width:180px;
-    height:180px;
+font-size:4rem;
 
-    border-radius:50%;
+color:var(--gold);
 
-    object-fit:cover;
+margin-bottom:15px;
 
-    border:4px solid #38bdf8;
 }
 
-.hero-text h1{
+.hero-content p{
 
-    color:#38bdf8;
-    margin-bottom:15px;
+font-size:1.3rem;
+
+margin-bottom:25px;
+
 }
 
-.hero-text p{
+/* =========================
+   SEARCH BOX
+========================= */
 
-    line-height:1.8;
-    margin-bottom:20px;
+.search-box{
+
+display:flex;
+
+justify-content:center;
+
+gap:10px;
+
+flex-wrap:wrap;
+
 }
 
-.hero-buttons{
+.search-box input{
 
-    display:flex;
-    gap:15px;
+padding:15px;
+
+width:350px;
+
+border:none;
+
+border-radius:10px;
+
+outline:none;
+
 }
 
-/* ==========================
-   BUTTON
-========================== */
+.search-box button{
 
-.btn{
+padding:15px 25px;
 
-    display:inline-block;
+border:none;
 
-    padding:12px 25px;
+background:var(--gold);
 
-    background:#38bdf8;
+cursor:pointer;
 
-    color:white;
+border-radius:10px;
 
-    text-decoration:none;
+font-weight:bold;
 
-    border-radius:8px;
-
-    transition:0.3s;
 }
 
-.btn:hover{
+/* =========================
+   SECTION
+========================= */
 
-    transform:translateY(-4px);
+.section{
+
+padding:60px 8%;
+
 }
 
-/* ==========================
-   HEADINGS
-========================== */
+.section h2{
 
-h2{
+text-align:center;
 
-    color:#38bdf8;
+margin-bottom:30px;
 
-    margin-bottom:20px;
+color:var(--gold);
+
+font-size:2rem;
+
 }
 
-/* ==========================
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:20px;
+
+}
+
+.category{
+
+background:var(--card);
+
+padding:15px 30px;
+
+border-radius:30px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.category:hover{
+
+background:var(--gold);
+
+color:black;
+
+}
+
+/* =========================
    FOOD GRID
-========================== */
+========================= */
 
 .food-grid{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
 
-    gap:25px;
+gap:30px;
+
 }
 
-/* ==========================
+/* =========================
    FOOD CARD
-========================== */
+========================= */
 
 .food-card{
 
-    background:rgba(255,255,255,0.06);
+background:var(--card);
 
-    border-radius:15px;
+border-radius:20px;
 
-    overflow:hidden;
+overflow:hidden;
 
-    transition:0.3s;
+transition:0.4s;
 
-    border:1px solid rgba(255,255,255,0.1);
 }
 
 .food-card:hover{
 
-    transform:translateY(-8px);
+transform:translateY(-10px);
+
+box-shadow:
+0 15px 35px rgba(212,175,55,0.3);
+
 }
 
 .food-card img{
 
-    width:100%;
+width:100%;
+height:230px;
 
-    height:220px;
+object-fit:cover;
 
-    object-fit:cover;
+display:block;
 
-    display:block;
 }
 
-.food-card h3{
+.food-info{
 
-    text-align:center;
+padding:20px;
 
-    padding-top:15px;
+}
+
+.food-info h3{
+
+margin-bottom:10px;
+
+}
+
+.rating{
+
+color:gold;
+
+margin:10px 0;
+
+font-weight:bold;
+
 }
 
 .price{
 
-    text-align:center;
+font-size:22px;
 
-    color:#38bdf8;
+font-weight:bold;
 
-    font-size:22px;
+color:var(--gold);
 
-    font-weight:bold;
+margin-bottom:15px;
 
-    padding:10px 0 20px;
 }
 
-/* ==========================
-   FEATURES
-========================== */
+.order-btn{
 
-.feature-grid{
+display:inline-block;
 
-    display:grid;
+padding:10px 20px;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
+background:var(--gold);
 
-    gap:20px;
+color:black;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-weight:bold;
+
 }
 
-.feature-box{
+/* =========================
+   OFFER
+========================= */
 
-    background:rgba(255,255,255,0.06);
+.offer{
 
-    padding:25px;
+margin:40px 8%;
 
-    border-radius:15px;
+padding:40px;
 
-    text-align:center;
+background:
+linear-gradient(
+45deg,
+#D4AF37,
+#FFD700
+);
+
+text-align:center;
+
+border-radius:20px;
+
+color:black;
+
 }
 
-.feature-box i{
+.offer h2{
 
-    color:#38bdf8;
+margin-bottom:10px;
 
-    font-size:35px;
-
-    margin-bottom:15px;
 }
 
-.feature-box h3{
+/* =========================
+   STATS
+========================= */
 
-    margin-bottom:10px;
+.stats{
+
+padding:40px 8%;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(200px,1fr));
+
+gap:25px;
+
 }
 
-/* ==========================
+.stats div{
+
+background:var(--card);
+
+padding:30px;
+
+border-radius:15px;
+
+text-align:center;
+
+}
+
+.stats h2{
+
+color:var(--gold);
+
+}
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.review-card{
+
+background:var(--card);
+
+padding:25px;
+
+border-radius:15px;
+
+}
+
+.review-card h4{
+
+margin-top:15px;
+
+color:var(--gold);
+
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+.contact-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+max-width:600px;
+
+margin:auto;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+padding:15px;
+
+border:none;
+
+border-radius:10px;
+
+}
+
+.contact-form button{
+
+background:var(--gold);
+
+border:none;
+
+padding:15px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+/* =========================
    FOOTER
-========================== */
+========================= */
 
 footer{
 
-    text-align:center;
+margin-top:50px;
 
-    padding:40px 20px;
+padding:40px;
 
-    margin-top:30px;
+text-align:center;
 
-    background:rgba(255,255,255,0.05);
+background:#000;
+
+border-top:2px solid var(--gold);
+
 }
 
-.socials{
+footer h3{
 
-    margin:15px 0;
+color:var(--gold);
+
+margin-bottom:10px;
+
 }
 
-.socials i{
-
-    font-size:22px;
-
-    margin:0 10px;
-
-    cursor:pointer;
-}
-
-.socials i:hover{
-
-    color:#38bdf8;
-}
-
-/* ==========================
+/* =========================
    RESPONSIVE
-========================== */
+========================= */
 
 @media(max-width:768px){
 
-    .navbar{
+.navbar{
 
-        flex-direction:column;
-        gap:15px;
-    }
+flex-direction:column;
 
-    .nav-links{
-
-        flex-direction:column;
-        text-align:center;
-        gap:10px;
-    }
-
-    .hero-card{
-
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .hero-card img{
-
-        width:140px;
-        height:140px;
-    }
-
-    .hero-buttons{
-
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .btn{
-
-        width:200px;
-        text-align:center;
-    }
-
-    .food-grid,
-    .feature-grid{
-
-        grid-template-columns:1fr;
-    }
+gap:15px;
 
 }
 
-@media(max-width:480px){
+.nav-links{
 
-    .logo{
+flex-direction:column;
 
-        font-size:22px;
-    }
+text-align:center;
 
-    .hero-text h1{
+}
 
-        font-size:26px;
-    }
+.hero-content h1{
 
-    .food-card img{
+font-size:2.5rem;
 
-        height:200px;
-    }
+}
+
+.search-box input{
+
+width:100%;
+
+}
 
 }

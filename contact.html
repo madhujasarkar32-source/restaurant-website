@@ -7,7 +7,7 @@
 
 <title>Contact</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -30,28 +30,28 @@
 
 </nav>
 
-<section class="glass-section">
+<section class="glass">
 
 <h2>Book A Table</h2>
 
-<form id="bookingForm" class="contact-form">
+<form class="contact-form" id="bookingForm">
 
 <input
 type="text"
 id="name"
-placeholder="Enter Your Name"
+placeholder="Your Name"
 required>
 
 <input
 type="email"
 id="email"
-placeholder="Enter Your Email"
+placeholder="Your Email"
 required>
 
 <input
 type="tel"
 id="phone"
-placeholder="Enter Phone Number"
+placeholder="Phone Number"
 required>
 
 <input
@@ -64,7 +64,6 @@ required>
 
 <input
 type="number"
-id="guests"
 placeholder="Number of Guests"
 required>
 
@@ -84,14 +83,55 @@ Book Table
 </section>
 
 <footer>
-
-<p>
-© 2026 Royal Gold Restaurant
-</p>
-
+<p>© 2026 Royal Gold Restaurant</p>
 </footer>
 
 <script src="js/script.js"></script>
+
+<script>
+const bookingForm =
+document.getElementById("bookingForm");
+
+bookingForm.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+const name =
+document.getElementById("name").value;
+
+const email =
+document.getElementById("email").value;
+
+const phone =
+document.getElementById("phone").value;
+
+if(name===""){
+
+alert("Enter your name");
+return;
+
+}
+
+if(!email.includes("@")){
+
+alert("Enter valid email");
+return;
+
+}
+
+if(phone.length<10){
+
+alert("Enter valid phone number");
+return;
+
+}
+
+alert("Table Booked Successfully!");
+
+bookingForm.reset();
+
+});
+</script>
 
 </body>
 </html>
